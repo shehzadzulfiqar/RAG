@@ -1,0 +1,20 @@
+
+
+## Understanding RAG: How LLMs and Embeddings Work Together
+
+This project helps you understand the core mechanics behind **Retrieval-Augmented Generation (RAG)** by showing how Large Language Models (LLMs) and embeddings work together.
+
+### Keeping It Simple
+
+Imagine a user asks the chatbot a question:
+
+> *"Which civilizations lived on the banks of the Yellow River and Indus River?"*
+
+Here is what happens behind the scenes in a few simple steps:
+
+1. **Text Conversion (Embedding):** The user's question is passed through an embedding API (such as **OpenAI**, **Anthropic Claude**, or a local model via **Ollama**). This converts the text into a list of numbers—known as a **vector** (e.g., `[0.675875, 0.45738, 0.3457, ...]`) that captures the semantic meaning of the text.
+2. **Similarity Search:** These numbers are then compared against a collection of pre-stored document vectors (stored in a **vector database** like Chroma, FAISS, or Pinecone) using similarity metrics.
+3. **Retrieval & Generation:** The system finds the most relevant matching text chunks and passes them—along with the original user question—to the LLM as context. The LLM then generates an accurate, informed final response for the user.
+
+Now that we have the simple concept down, let's dive into the **practical** implementation!
+
